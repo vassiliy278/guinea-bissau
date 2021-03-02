@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import DeleteButton from './react/deletePost'
-import {useState, useEffect} from 'react'
+import {useState} from 'react'
 
 
 
@@ -26,7 +26,7 @@ export default function Next({data}) {
         </div>    
   )
 }
-export async function getServerSideProps({params}) {
+export async function getServerSideProps() {
     const res = await fetch(`https://simple-blog-api.crew.red/posts`)
     const data = await res.json()
   return {
